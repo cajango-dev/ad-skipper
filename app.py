@@ -9,10 +9,10 @@ imagem = "files/pular.png"
 # Inifite loop to verify screen image
 while True:
     try:
-        posicao = pyautogui.locateOnScreen(imagem, confidence=0.0)
+        posicao = pyautogui.locateOnScreen(imagem, confidence=0.8)
         
         if posicao:
-            print("Botão encontrado em {posicao}")
+            print(f"Botão encontrado em {posicao}")
             
             pyautogui.click(pyautogui.center(posicao))
             
