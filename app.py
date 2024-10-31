@@ -1,3 +1,26 @@
 import pyautogui
 import time
-import cv2
+
+
+# Path of skip button
+imagem = "files/pular.png"
+
+
+# Inifite loop to verify screen image
+while True:
+    try:
+        posicao = pyautogui.locateOnScreen(imagem, confidence=0.0)
+        
+        if posicao:
+            print("Botão encontrado em {posicao}")
+            
+            pyautogui.click(pyautogui.center(posicao))
+            
+            time.sleep(2)
+        else:
+            print("...")
+            
+    except pyautogui.ImageNotFoundException:
+        print("Imagem não encontrada, tentando novamente")
+        
+        time.sleep(1)
